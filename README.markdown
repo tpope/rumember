@@ -51,3 +51,9 @@ need to understand what a timeline is.
     task = list.tasks.first
     transaction = task.complete
     transaction.undo
+
+## Contributing
+
+Please follow [Git commit message best
+practices](http://tbaggery.com/2008/04/19/a-note-about-git-commit-messages.html)
+when submitting a pull request.
