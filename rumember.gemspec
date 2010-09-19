@@ -9,7 +9,7 @@ Gem::Specification.new do |s|
   s.default_executable  = "ru"
   s.executables         = ["ru"]
   s.files               = [
-    "README.rdoc",
+    "README.markdown",
     "MIT-LICENSE",
     "rumember.gemspec",
     "bin/ru",
