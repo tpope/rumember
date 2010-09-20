@@ -86,15 +86,9 @@ class Rumember
     frob = dispatch('auth.getFrob')['frob']
     Launchy.open(auth_url(:delete, 'frob' => frob))
     first = true
-    begin
-      dispatch('auth.getToken', 'frob' => frob)['auth']
-    rescue ResponseError => e
-      puts e.message unless first
-      puts 'Press enter when authentication is complete'
-      $stdin.gets
-      first = false
-      retry
-    end
+    puts 'Press enter when authentication is complete'
+    $stdin.gets
+    dispatch('auth.getToken', 'frob' => frob)['auth']
   end
 
   def reconfigure
