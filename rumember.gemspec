@@ -14,6 +14,13 @@ Gem::Specification.new do |s|
     "rumember.gemspec",
     "bin/ru",
     "lib/rumember.rb",
+    "lib/rumember/abstract.rb",
+    "lib/rumember/account.rb",
+    "lib/rumember/list.rb",
+    "lib/rumember/location.rb",
+    "lib/rumember/task.rb",
+    "lib/rumember/timeline.rb",
+    "lib/rumember/transaction.rb",
   ]
   s.add_runtime_dependency("json", ["~> 1.4.0"])
   s.add_runtime_dependency("launchy", ["~> 0.3.0"])
