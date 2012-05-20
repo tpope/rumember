@@ -127,6 +127,7 @@ class Rumember
   end
 
   def dispatch(method, params = {})
+    require 'rubygems'
     require 'json'
     require 'open-uri'
     raw = open(url(params.merge('method' => "rtm.#{method}", 'format' => 'json'))).read
