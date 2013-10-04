@@ -7,7 +7,7 @@ describe Rumember::Transaction do
   end
 
   let :parent do
-    stub.as_null_object
+    double.as_null_object
   end
 
   subject do
