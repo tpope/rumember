@@ -1,2 +1,3 @@
-source :gemcutter
+source "https://rubygems.org"
+
 gemspec
