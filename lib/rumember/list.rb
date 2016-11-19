@@ -11,8 +11,14 @@ class Rumember
     end
 
     def tasks
-      dispatch('tasks.getList')['tasks']['list']['taskseries'].map do |ts|
-        Task.new(self, ts)
+      list = dispatch('tasks.getList')['tasks']['list']
+      if list.kind_of?(Array)
+        taskseries = list.flat_map { |l| if l['taskseries'].kind_of?(Array) then l['taskseries'] else [l['taskseries']] end }
+      else
+        taskseries = if list['taskseries'].kind_of?(Array) then list['taskseries'] else [list['taskseries']] end
+      end
+      taskseries.map do |t|
+        Task.new(self, t)
       end
     end
 
