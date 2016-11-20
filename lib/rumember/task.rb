@@ -9,6 +9,22 @@ class Rumember
       Integer(@attributes['task']['id'])
     end
 
+    def completed?
+      !(@attributes['task']['completed'].empty?)
+    end
+
+    def deleted?
+      !(@attributes['task']['completed'].empty?)
+    end
+
+    def postponed
+      Integer(@attributes['task']['postponed'])
+    end
+
+    def priority
+      @attributes['task']['priority'] == "N" ? 0 : Integer(@attributes['task']['priority'])
+    end
+
     def tags
       if @attributes['tags'].empty?
         []
