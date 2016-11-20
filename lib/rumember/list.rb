@@ -10,8 +10,8 @@ class Rumember
       {'list_id' => id}
     end
 
-    def tasks
-      list = dispatch('tasks.getList')['tasks']['list']
+    def tasks(params = {})
+      list = dispatch('tasks.getList', params)['tasks']['list']
       if list.kind_of?(Array)
         list.flat_map do |l|
           ll = List.new(@parent, {'id' => l['id']})
