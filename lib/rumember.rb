@@ -9,6 +9,7 @@ class Rumember
 
   API_KEY = '36f62f69fba7135e8049adbe307ff9ba'
   SHARED_SECRET = '0c33513097c09be4'
+  API_VERSION = '2'
 
   module Dispatcher
 
@@ -50,11 +51,12 @@ class Rumember
     exit 130
   end
 
-  attr_reader :api_key, :shared_secret
+  attr_reader :api_key, :shared_secret, :api_version
 
-  def initialize(api_key = API_KEY, shared_secret = SHARED_SECRET)
+  def initialize(api_key = API_KEY, shared_secret = SHARED_SECRET, api_version = API_VERSION)
     @api_key = api_key
     @shared_secret = shared_secret
+    @api_version = api_version
   end
 
   def api_sig(params)
@@ -65,7 +67,7 @@ class Rumember
   end
 
   def sign(params)
-    params = params.merge('api_key' => api_key)
+    params = params.merge('api_key' => api_key, 'v' => api_version)
     params.update('api_sig' => api_sig(params))
   end
 
