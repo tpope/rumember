@@ -28,7 +28,7 @@ class Rumember
 
     def self.integer_reader(*methods)
       reader(*methods) do |value|
-        Integer(value)
+        Integer(value) unless value.kind_of?(String) && value.empty?
       end
     end
 

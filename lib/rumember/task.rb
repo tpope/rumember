@@ -1,6 +1,6 @@
 class Rumember
   class Task < Abstract
-    integer_reader :id, :location_id
+    integer_reader :id, :location_id, :parent_task_id
     time_reader :created, :modified
     reader :name, :source, :url
     alias taskseries_id id
