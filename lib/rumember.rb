@@ -67,7 +67,7 @@ class Rumember
   end
 
   def sign(params)
-    params = params.merge('api_key' => api_key, 'v' => api_version)
+    params = params.merge('api_key' => api_key)
     params.update('api_sig' => api_sig(params))
   end
 
