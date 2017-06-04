@@ -3,7 +3,7 @@ require File.expand_path(File.dirname(__FILE__) + '/../../spec/spec_helper')
 describe Rumember::Timeline do
 
   let :interface do
-    stub.as_null_object
+    double.as_null_object
   end
 
   let :account do

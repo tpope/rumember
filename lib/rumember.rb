@@ -67,7 +67,7 @@ class Rumember
   end
 
   def sign(params)
-    params = params.merge('api_key' => api_key, 'v' => api_version)
+    params = params.merge('api_key' => api_key)
     params.update('api_sig' => api_sig(params))
   end
 
@@ -79,7 +79,7 @@ class Rumember
   end
 
   def auth_url(perms = :delete, extra = {})
-    "http://rememberthemilk.com/services/auth?" +
+    "https://rememberthemilk.com/services/auth?" +
       params({'perms' => perms}.merge(extra))
   end
 
@@ -125,7 +125,7 @@ class Rumember
   end
 
   def url(params)
-    "http://api.rememberthemilk.com/services/rest?#{params(params)}"
+    "https://api.rememberthemilk.com/services/rest?#{params(params)}"
   end
 
   def dispatch(method, params = {})
