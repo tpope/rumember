@@ -20,7 +20,7 @@ class Rumember
           end
         end
       else
-        if list.respond_to?('taskseries')
+        if list.has_key?('taskseries')
           (list['taskseries'].kind_of?(Array) ? list['taskseries'] : [list['taskseries']]).map do |t|
             Task.new(self, t)
           end
