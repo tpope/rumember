@@ -15,6 +15,6 @@ Gem::Specification.new do |s|
   s.add_runtime_dependency("json", ["~> 1.8.0"])
   s.add_runtime_dependency("launchy", ["~> 2"])
 
-  s.add_development_dependency("rake")
+  s.add_development_dependency("rake", ["< 11"])
   s.add_development_dependency("rspec", ["~> 2"])
 end
