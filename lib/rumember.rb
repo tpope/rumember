@@ -154,5 +154,6 @@ class Rumember
   autoload :List, 'rumember/list'
   autoload :Location, 'rumember/location'
   autoload :Task, 'rumember/task'
+  autoload :Note, 'rumember/note'
 
 end

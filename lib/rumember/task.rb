@@ -33,6 +33,17 @@ class Rumember
       end
     end
 
+    def notes
+      if @attributes['notes'].empty?
+        []
+      else
+        note = @attributes['notes']['note']
+        (note.kind_of?(Array) ? note : [note]).map do |n|
+          Note.new(self, n)
+        end
+      end
+    end
+
     def params
       {'taskseries_id' => taskseries_id, 'task_id' => task_id}
     end
