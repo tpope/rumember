@@ -131,7 +131,7 @@ class Rumember
   def dispatch(method, params = {})
     require 'json'
     require 'open-uri'
-    raw = open(url(params.merge('method' => "rtm.#{method}", 'format' => 'json'))).read
+    raw = URI.open(url(params.merge('method' => "rtm.#{method}", 'format' => 'json'))).read
     rsp = JSON.parse(raw)['rsp']
     case rsp['stat']
     when 'fail'
